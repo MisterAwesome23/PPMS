@@ -59,7 +59,7 @@ public class ActivityLogIn extends AppCompatActivity implements View.OnClickList
         }
 
         if (password.length() < 6) {
-            etEnterPassword.setError("Minimum length of password should be 6 characters");
+            etEnterPassword.setError("Minimum length of password should be 6");
             etEnterPassword.requestFocus();
             return;
         }
