@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SuccessfullyLoggedIn extends AppCompatActivity {
 
 
-    Button btnOpenMap,btnGetLatestPetrolPrice;
+    Button btnOpenMap,btnGetLatestPetrolPrice,btnTallyAccount;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,6 +67,15 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        btnTallyAccount= findViewById(R.id.btnTallyAccount);
+        btnTallyAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),ActivityAccounts.class);
+                startActivity(intent);
+            }
+        });
 
 
 

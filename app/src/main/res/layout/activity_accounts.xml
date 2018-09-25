@@ -5,36 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SuccessfullyLoggedIn">
+    tools:context=".ActivityAccounts">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <EditText
+        android:id="@+id/etCash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark" />
+        android:ems="10"
+        android:hint="Enter amount received in CASH"
+        android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/tvSuccessfulLogIn"
+    <EditText
+        android:id="@+id/etDtCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome. You have successfully logged in." />
+        android:ems="10"
+        android:hint="Enter amount received in DT Card"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etSwipeCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter amount received in Swipe Card"
+        android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/btnOpenMap"
+        android:id="@+id/btnTallyValues"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find Nearest Petrol Pump" />
-
-    <Button
-        android:id="@+id/btnGetLatestPetrolPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Get latest petrol price" />
-
-    <Button
-        android:id="@+id/btnTallyAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tally Accounts" />
-
+        android:text="Tally Values" />
 </LinearLayout>
