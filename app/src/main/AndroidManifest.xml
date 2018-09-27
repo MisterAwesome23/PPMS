@@ -27,9 +27,11 @@
             android:label="@string/app_name" />
         <activity android:name=".ActivityAccounts"
             android:label="PPMS"/>
-        <activity android:name=".ActivityInputData"
+
+
+        <activity android:name=".InputData"
             android:label="PPMS"/>
-        <activity android:name=".ActivityShowSales"
+        <activity android:name=".showSales"
             android:label="PPMS"/>
     </application>
 
