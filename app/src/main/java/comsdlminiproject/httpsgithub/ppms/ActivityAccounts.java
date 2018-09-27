@@ -24,21 +24,21 @@ public class ActivityAccounts extends AppCompatActivity {
         btnTallyValues= findViewById(R.id.btnTallyValues);
 
 
+        final double sumToTallyWith= Double.parseDouble(getIntent().getStringExtra("TotalSumForTally"));
 
-        final double checkAmtByCash=10000;
-        final double checkAmtByDtCard=3000;
-        final double checkAmtBySwipeCard=8000;
 
         btnTallyValues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                double amtByCash= Double.parseDouble(etCash.getText().toString().trim());
-                double amtByDtCard= Double.parseDouble(etDtCard.getText().toString().trim());
-                double amtBySwipeCard= Double.parseDouble(etSwipeCard.getText().toString().trim());
 
-                if((amtByCash==checkAmtByCash)&&(amtByDtCard==checkAmtByDtCard)&&(amtBySwipeCard==checkAmtBySwipeCard))
+
+                double amtByCash= Double.parseDouble(etCash.getText().toString());
+                double amtByDtCard= Double.parseDouble(etDtCard.getText().toString());
+                double amtBySwipeCard= Double.parseDouble(etSwipeCard.getText().toString());
+
+                if( (amtByCash)+(amtByDtCard)+(amtBySwipeCard)==sumToTallyWith)
                 {
                     Toast.makeText(ActivityAccounts.this, "All values are tallied. Good to go.", Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(getApplicationContext(),SuccessfullyLoggedIn.class);
@@ -48,18 +48,7 @@ public class ActivityAccounts extends AppCompatActivity {
                 }
                 else
                 {
-                    if(amtByCash!=checkAmtByCash)
-                    {
-                        Toast.makeText(ActivityAccounts.this, "Cash value mismatch", Toast.LENGTH_SHORT).show();
-                    }else if( amtByDtCard != checkAmtByDtCard)
-                    {
-                        Toast.makeText(ActivityAccounts.this, "DT Card value mismatch", Toast.LENGTH_SHORT).show();
-
-                    }else if(amtBySwipeCard != checkAmtBySwipeCard)
-                    {
-                        Toast.makeText(ActivityAccounts.this, "Swipe Card value mismatch", Toast.LENGTH_SHORT).show();
-                    }
-
+                    Toast.makeText(ActivityAccounts.this, "Cash value mismatch", Toast.LENGTH_SHORT).show();
                 }
             }
         });
