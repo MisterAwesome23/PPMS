@@ -72,7 +72,7 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
         btnTallyAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getApplicationContext(),ActivityAccounts.class);
+                Intent intent= new Intent(getApplicationContext(),InputData.class);
                 startActivity(intent);
             }
         });
