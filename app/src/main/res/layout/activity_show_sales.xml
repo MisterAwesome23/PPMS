@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".showSales">
+
+    <EditText
+        android:id="@+id/ptMS"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="65dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="MS" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="5dp"
+        android:layout_height="397dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
+        android:background="?android:attr/listDivider" />
+
+    <EditText
+        android:id="@+id/ptHSD"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/ptMS"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="HSD" />
+
+
+    <EditText
+        android:id="@+id/ptSales"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/ptEarn"
+        android:layout_marginTop="148dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Sales :" />
+
+    <EditText
+        android:id="@+id/tvSales"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptSales"
+        android:layout_below="@+id/ptSales"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/ptEarn"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptIntro"
+        android:layout_alignTop="@+id/ptEarn2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Earned :" />
+
+    <EditText
+        android:id="@+id/tvEarn"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptSales"
+        android:layout_below="@+id/ptEarn"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/ptSales2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptHSD"
+        android:layout_alignTop="@+id/ptSales"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Sales :" />
+
+    <EditText
+        android:id="@+id/tvSales2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptSales2"
+        android:layout_below="@+id/ptSales"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/ptEarn2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/ptSales2"
+        android:layout_marginBottom="201dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Earned :" />
+
+    <EditText
+        android:id="@+id/tvEarn2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptSales2"
+        android:layout_below="@+id/ptEarn2"
+        android:layout_marginTop="-201dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/ptIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/ptMS"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Sales For The Day"
+        android:textSize="21sp"
+        android:textStyle="bold|italic" />
+
+</RelativeLayout>

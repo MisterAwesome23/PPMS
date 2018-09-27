@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/ptMS"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="65dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="MS" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="2dp"
+        android:layout_height="203dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
+        android:background="?android:attr/listDivider" />
+
+    <EditText
+        android:id="@+id/ptHSD"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/ptMS"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="HSD" />
+
+    <EditText
+        android:id="@+id/tvOprd"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/ptMS"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:hint="Opening Reading"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/tvClrd"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptMS"
+        android:layout_below="@+id/tvOprd"
+        android:ems="10"
+        android:hint="Closing Reading"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/tvCost"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptMS"
+        android:layout_below="@+id/tvClrd"
+        android:ems="10"
+        android:hint="Cost of Petrol "
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/tvOprd2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptHSD"
+        android:layout_alignTop="@+id/tvOprd"
+        android:ems="10"
+        android:hint="Opening Reading"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/tvClrd2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptHSD"
+        android:layout_below="@+id/tvOprd"
+        android:ems="10"
+        android:hint="Closing Reading"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/tvCost2"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ptHSD"
+        android:layout_alignTop="@+id/tvCost"
+        android:ems="10"
+        android:hint="Cost of Diesel"
+        android:inputType="numberDecimal" />
+
+
+    <EditText
+        android:id="@+id/ptIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/ptMS"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="Enter the following values for the day "
+        android:textSize="19sp"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/btnTally"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="115dp"
+        android:onClick="showSales"
+        android:text="SHOW SALES" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/divider"
+        android:background="?android:attr/listDivider" />
+
+</RelativeLayout>
