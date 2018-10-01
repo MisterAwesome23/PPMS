@@ -1,37 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ActivitySignUp">
+    tools:context=".ActivitySignUp"
+    android:background="@drawable/background_login"
+    >
 
     <EditText
         android:id="@+id/etEnterEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="30dp"
+        android:ems="15"
+        android:background="#11000000"
+        android:textColor="#FDFAFB"
+        android:textColorHint="#FDFAFB"
+        android:textSize="16dp"
         android:hint="Enter Email"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/etEnterPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="270dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginBottom="30dp"
+        android:ems="15"
+
+        android:background="#11000000"
+        android:textColor="#FDFAFB"
+        android:textColorHint="#FDFAFB"
+        android:textSize="16dp"
+
         android:hint="Enter Password"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/btnSignUpNewUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SIGNUP" />
 
-    <Button
-        android:id="@+id/btnGoToLoginPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ALREADY registered? Login" />
-</LinearLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#E93148"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:id="@+id/cardView"
+        android:layout_marginBottom="30dp"
+        app:cardPreventCornerOverlap="false"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/etEnterPassword"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/btnLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Signup"
+                android:textColor="#FDFAFB"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#E93148"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:id="@+id/cardView1"
+        android:layout_below="@id/cardView"
+
+        app:cardPreventCornerOverlap="false"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/btnGoToLoginPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+
+                android:text="Already Registered? SIGNUP"
+                android:textColor="#FDFAFB"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="113dp"
+        android:layout_height="115dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        app:srcCompat="@drawable/ic_action_user_register" />
+
+
+</RelativeLayout>
