@@ -37,6 +37,7 @@ public class InputData extends AppCompatActivity
         double salesRes, earnRes, salesRes2, earnRes2;
 
         String salesResText,salesRes2Text,earnResText,earnRes2Text;
+        String msrpPText,msrpDText;
 
         EditText oprd = (EditText) findViewById(R.id.tvOprd);
         EditText clrd = (EditText) findViewById(R.id.tvClrd);
@@ -72,12 +73,19 @@ public class InputData extends AppCompatActivity
         salesRes2Text = Double.toString(salesRes2);
         earnResText = Double.toString(earnRes);
         earnRes2Text = Double.toString(earnRes2);
+        msrpDText= Double.toString(msrpD);
+        msrpPText= Double.toString(msrpP);
+
 
         Intent intent = new Intent(InputData.this, showSales.class);
         intent.putExtra("SALES1", salesResText);
         intent.putExtra("EARN1", earnResText);
         intent.putExtra("SALES2", salesRes2Text);
         intent.putExtra("EARN2", earnRes2Text);
+        intent.putExtra("PETROLSOLD", salesResText);
+        intent.putExtra("PETROLPRICE", msrpPText);
+        intent.putExtra("DIESELSOLD", salesRes2Text);
+        intent.putExtra("DIESELPRICE", msrpDText);
         startActivity(intent);
 
         //tvSales.setText(salesResText);
