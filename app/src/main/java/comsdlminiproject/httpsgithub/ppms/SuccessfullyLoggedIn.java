@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SuccessfullyLoggedIn extends AppCompatActivity {
 
 
-    Button btnOpenMap,btnGetLatestPetrolPrice,btnTallyAccount;
+    Button btnOpenMap,btnGetLatestPetrolPrice,btnTallyAccount,btnViewRecords;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -78,9 +78,17 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
         });
 
 
-
+        btnViewRecords = findViewById(R.id.btnViewRecords);
+        btnViewRecords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Data.class));
+            }
+        });
 
 
 
     }
+
+
 }

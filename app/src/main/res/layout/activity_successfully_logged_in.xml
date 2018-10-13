@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="Tally Accounts" />
 
+    <Button
+        android:id="@+id/btnViewRecords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="view records" />
+
 </LinearLayout>

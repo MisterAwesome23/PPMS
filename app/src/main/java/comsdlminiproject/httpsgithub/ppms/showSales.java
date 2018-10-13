@@ -30,14 +30,27 @@ public class showSales extends AppCompatActivity
 
         final double totalSumForTally= (earn1+earn2);
 
+
+        final String petrolprice=getIntent().getStringExtra("PETROLPRICE");
+        final String petrolsold=getIntent().getStringExtra("PETROLSOLD");
+        final String dieselprice=getIntent().getStringExtra("DIESELPRICE");
+        final String dieselsold=getIntent().getStringExtra("DIESELSOLD");
+
         btnTallyWithBank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),ActivityAccounts.class);
                 intent.putExtra("TotalSumForTally",Double.toString(totalSumForTally) );
+                intent.putExtra("PETROLSOLD", petrolsold);
+                intent.putExtra("PETROLPRICE", petrolprice);
+                intent.putExtra("DIESELSOLD", dieselsold);
+                intent.putExtra("DIESELPRICE", dieselprice);
                 startActivity(intent);
             }
         });
+
+
+
 
 
     }
