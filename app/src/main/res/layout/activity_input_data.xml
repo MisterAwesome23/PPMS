@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_login"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,7 +15,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="-112dp"
         android:layout_marginStart="20dp"
-        android:ems="10"
+        android:ems="15"
+        android:textStyle="bold"
+        android:textColor="#232322"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="MS"
@@ -27,7 +30,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/BlackBackground" />
 
     <TextView
         android:id="@+id/ptHSD"
@@ -37,10 +40,12 @@
         android:layout_alignTop="@+id/ptMS"
         android:layout_marginEnd="20dp"
         android:ems="10"
+        android:textColor="#232322"
         android:gravity="center"
+        android:textStyle="bold"
         android:inputType="textPersonName"
         android:text="HSD"
-        android:textSize="20sp" />
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/tvOprd"
@@ -117,21 +122,38 @@
         android:layout_marginStart="-5dp"
         android:layout_marginTop="10dp"
         android:ems="10"
+        android:textColor="#232322"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="Enter the values for the day "
         android:textSize="21sp"
-        android:textStyle="bold|italic" />
-
-    <Button
-        android:id="@+id/btnTally"
+        android:background="@drawable/border"
+        android:textStyle="bold|italic"/>
+    />
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewShowSales"
         android:layout_width="154dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="115dp"
-        android:onClick="showSales"
-        android:text="SHOW SALES" />
+        app:cardBackgroundColor="#f5060a"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <Button
+            android:id="@+id/btnTally"
+            android:layout_width="154dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/divider2"
+            android:layout_alignStart="@+id/cardViewShowSales"
+            android:background="#00ffffff"
+            android:textColor="#FFFDFAFB"
+            android:onClick="showSales"
+            android:text="SHOW SALES" />
+    </android.support.v7.widget.CardView>
+
 
     <View
         android:id="@+id/divider2"
@@ -139,24 +161,41 @@
         android:layout_height="2dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/divider"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/BlackBackground" />
 
     <View
         android:id="@+id/divider5"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="112dp"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/BlackBackground" />
 
     <View
         android:id="@+id/divider8"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="60dp"
-        android:background="?android:attr/listDivider" />
+        android:background="@color/BlackBackground" />
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="3dp"
+        android:layout_height="209dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:background="@color/BlackBackground" />
+
+    <View
+        android:id="@+id/divider9"
+        android:layout_width="3dp"
+        android:layout_height="209dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:background="@color/BlackBackground" />
 
 </RelativeLayout>
