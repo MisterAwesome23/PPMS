@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Date :"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPetPrice"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDate"
+        android:text="Petrol Price :"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/editDate"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="date "
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/editPetPrice"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvDate"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="petPrice"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvPetSold"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvPetPrice"
+        android:text="Petrol Sold :"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/editPetSold"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvPetPrice"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="petSold"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvPetEarn"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvPetSold"
+        android:text="Petrol Earn :"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/editPetEarn"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvPetSold"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="petEarn"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvDiePrice"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvPetEarn"
+        android:text="Diesel Price :"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/editDiePrice"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvPetEarn"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="diePrice"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvDieSold"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDiePrice"
+        android:text="Diesel Sold :"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/editDieSold"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvDiePrice"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="dieSold"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvDieEarn"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDieSold"
+        android:text="Diesel Earn :"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/editDieEarn"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvDieSold"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="dieEarn"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tvTotEarn"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDieEarn"
+        android:text="Total Earn :"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/editTotEarn"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/tvDieEarn"
+        android:layout_toEndOf="@+id/tvDate"
+        android:text="totEarn"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+</RelativeLayout>
