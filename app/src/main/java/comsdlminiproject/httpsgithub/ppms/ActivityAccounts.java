@@ -17,6 +17,8 @@ public class ActivityAccounts extends AppCompatActivity {
 
     EditText etCash,etDtCard,etSwipeCard;
     Button btnTallyValues,btnAddToRecords;
+    int flag=1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class ActivityAccounts extends AppCompatActivity {
                 if( (amtByCash)+(amtByDtCard)+(amtBySwipeCard)==sumToTallyWith)
                 {
                     Toast.makeText(ActivityAccounts.this, "All values are tallied. Good to go.", Toast.LENGTH_SHORT).show();
+                    flag=0;
                 }
                 else
                 {
@@ -58,32 +61,37 @@ public class ActivityAccounts extends AppCompatActivity {
         btnAddToRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                PetrolPumpDB db= new PetrolPumpDB(ActivityAccounts.this);
-                db.open();
-                String petprice,petsold,dieprice,diesold,date;
-
-
-
-                petprice= getIntent().getStringExtra("PETROLPRICE");
-                petsold= getIntent().getStringExtra("PETROLSOLD");
-                dieprice= getIntent().getStringExtra("DIESELPRICE");
-                diesold= getIntent().getStringExtra("DIESELSOLD");
-
-                java.util.Date c = Calendar.getInstance().getTime();
-                System.out.println("Current time => " + c);
-
-                SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-                String formattedDate = df.format(c);
+                if(flag == 1)
+                {
+                    Toast.makeText(ActivityAccounts.this, "Please tally values first.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    {
+                    PetrolPumpDB db = new PetrolPumpDB(ActivityAccounts.this);
+                    db.open();
+                    String petprice, petsold, dieprice, diesold, date;
 
 
-                db.createEntry(petprice,petsold,dieprice,diesold,formattedDate);
-                Toast.makeText(ActivityAccounts.this, "Added to database.", Toast.LENGTH_SHORT).show();
+                    petprice = getIntent().getStringExtra("PETROLPRICE");
+                    petsold = getIntent().getStringExtra("PETROLSOLD");
+                    dieprice = getIntent().getStringExtra("DIESELPRICE");
+                    diesold = getIntent().getStringExtra("DIESELSOLD");
 
-                db.close();
+                    java.util.Date c = Calendar.getInstance().getTime();
+                    System.out.println("Current time => " + c);
 
-                Intent intent = new Intent(getApplicationContext(),SuccessfullyLoggedIn.class);
-                startActivity(intent);
+                    SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+                    String formattedDate = df.format(c);
+
+
+                    db.createEntry(petprice, petsold, dieprice, diesold, formattedDate);
+                    Toast.makeText(ActivityAccounts.this, "Added to database.", Toast.LENGTH_SHORT).show();
+
+                    db.close();
+
+                    Intent intent = new Intent(getApplicationContext(), SuccessfullyLoggedIn.class);
+                    startActivity(intent);
+                }
             }
         });
 

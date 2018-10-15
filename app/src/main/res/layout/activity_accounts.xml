@@ -5,42 +5,89 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background_login"
     tools:context=".ActivityAccounts">
 
     <EditText
         android:id="@+id/etCash"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:ems="10"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border"
         android:hint="Enter amount received in CASH"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etDtCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
+        android:textAlignment="center"
+        android:background="@drawable/border"
         android:hint="Enter amount received in DT Card"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etSwipeCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:ems="10"
+        android:background="@drawable/border"
+        android:textAlignment="center"
         android:hint="Enter amount received in Swipe Card"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/btnTallyValues"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tally Values" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewTallyValues"
+        android:layout_width="154dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="350dp"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#f5060a"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
 
-    <Button
-        android:id="@+id/btnAddToRecords"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:text="Add to records" />
+        <Button
+            android:id="@+id/btnTallyValues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00ffffff"
+            android:clickable="true"
+            android:text="Tally Values"
+            android:textColor="#FFFDFAFB" />
+
+
+       </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewAddtoRecords"
+        android:layout_width="154dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_below="@+id/cardViewTallyValues"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#f5060a"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+
+        <Button
+            android:id="@+id/btnAddToRecords"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/cardViewAddtoRecords"
+            android:background="#00ffffff"
+            android:clickable="true"
+            android:text="Add to records"
+            android:textColor="#FFFDFAFB" />
+    </android.support.v7.widget.CardView>
+
 </LinearLayout>
