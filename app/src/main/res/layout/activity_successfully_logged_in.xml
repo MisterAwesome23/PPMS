@@ -43,4 +43,10 @@
         android:layout_height="wrap_content"
         android:text="view records" />
 
+    <Button
+        android:id="@+id/btnOpenCctv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CCTV" />
+
 </LinearLayout>

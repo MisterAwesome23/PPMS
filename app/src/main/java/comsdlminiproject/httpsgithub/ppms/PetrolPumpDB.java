@@ -105,12 +105,13 @@ public class PetrolPumpDB {
 
         for(c.moveToFirst();!c.isAfterLast();c.moveToNext()){
 
-            result= result + c.getString(irowid)+
-                    ": "+c.getString(ipetprice)+
-                    ": "+c.getString(ipetsold)+
-                    ": "+c.getString(idieprice)+
-                    ": "+c.getString(idiesold)+
-                    ": "+c.getString(idate)+"\n";
+            result= result +"ID: "+c.getString(irowid)+
+                    "\n"+"DATE: "+c.getString(idate)+
+                    "\n"+"Petrol Price(INR): "+c.getString(ipetprice)+
+                    "\n"+"Petrol Sold(Litres): "+c.getString(ipetsold)+
+                    "\n"+"Diesel Price(INR): "+c.getString(idieprice)+
+                    "\n"+"Diesel Sold(Litres): "+c.getString(idiesold)+
+                    "\n\n\n";
         }
 
 

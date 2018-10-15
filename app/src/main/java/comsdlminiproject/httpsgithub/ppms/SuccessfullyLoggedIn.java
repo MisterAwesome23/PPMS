@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SuccessfullyLoggedIn extends AppCompatActivity {
 
 
-    Button btnOpenMap,btnGetLatestPetrolPrice,btnTallyAccount,btnViewRecords;
+    Button btnOpenMap,btnGetLatestPetrolPrice,btnTallyAccount,btnViewRecords,btnOpenCctv;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,6 +85,17 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Data.class));
             }
         });
+
+        btnOpenCctv= findViewById(R.id.btnOpenCctv);
+        btnOpenCctv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.mcu.iVMSHD");
+                startActivity(intent);
+            }
+        });
+
+
 
 
 

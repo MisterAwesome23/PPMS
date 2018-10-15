@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.jsoup.nodes.Document;
+
 import java.sql.SQLException;
 
 public class Data extends AppCompatActivity {
@@ -21,6 +23,8 @@ public class Data extends AppCompatActivity {
         db.open();
         tvShowRecords.setText(db.getEntry());
         db.close();
+
+
     }
 }
 
