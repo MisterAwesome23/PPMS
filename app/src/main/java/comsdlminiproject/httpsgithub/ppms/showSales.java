@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class showSales extends AppCompatActivity
 {
-    TextView tvSales, tvSales2, tvEarn, tvEarn2;
+    TextView tvSales, tvSales2, tvEarn, tvEarn2, etTotalEarned;
     Button btnTallyWithBank;
 
     @Override
@@ -29,6 +29,8 @@ public class showSales extends AppCompatActivity
         double earn2= Double.parseDouble(getIntent().getStringExtra("EARN2"));
 
         final double totalSumForTally= (earn1+earn2);
+
+        etTotalEarned.setText("Rs." + Double.toString(totalSumForTally));
 
 
         final String petrolprice=getIntent().getStringExtra("PETROLPRICE");
@@ -61,6 +63,7 @@ public class showSales extends AppCompatActivity
         tvSales2 = findViewById(R.id.tvSales2);
         tvEarn = findViewById(R.id.tvEarn);
         tvEarn2 = findViewById(R.id.tvEarn2);
+        etTotalEarned = findViewById(R.id.etTotalEarned);
         btnTallyWithBank= findViewById(R.id.btnTallyWithBank);
     }
 }
