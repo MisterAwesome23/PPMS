@@ -2,6 +2,7 @@ package comsdlminiproject.httpsgithub.ppms;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class Data extends AppCompatActivity {
         setContentView(R.layout.activity_data);
 
         tvShowRecords = findViewById(R.id.tvShowRecords);
+        tvShowRecords.setMovementMethod(new ScrollingMovementMethod());
 
         PetrolPumpDB db = new PetrolPumpDB(this);
         db.open();
