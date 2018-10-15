@@ -17,7 +17,7 @@ public class Data extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
 
-        tvShowRecords = findViewById(R.id.tvShowRecords);
+        //tvShowRecords = findViewById(R.id.tvShowRecords);
 
         PetrolPumpDB db = new PetrolPumpDB(this);
         db.open();

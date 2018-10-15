@@ -37,6 +37,10 @@ public class showSales extends AppCompatActivity
         final String petrolsold=getIntent().getStringExtra("PETROLSOLD");
         final String dieselprice=getIntent().getStringExtra("DIESELPRICE");
         final String dieselsold=getIntent().getStringExtra("DIESELSOLD");
+        final String earnPetrol = getIntent().getStringExtra("EARN1");
+        final String earnDiesel = getIntent().getStringExtra("EARN2");
+        final String earnTotal = getIntent().getStringExtra("EARNTOTAL");
+
 
         btnTallyWithBank.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +51,11 @@ public class showSales extends AppCompatActivity
                 intent.putExtra("PETROLPRICE", petrolprice);
                 intent.putExtra("DIESELSOLD", dieselsold);
                 intent.putExtra("DIESELPRICE", dieselprice);
+                intent.putExtra("PETROLEARN", earnPetrol);
+                intent.putExtra("DIESELEARN",earnDiesel);
+                intent.putExtra("TOTALEARN", earnTotal);
+                //intent.putExtra("EARNTOTAL", earnTotalText);
+
                 startActivity(intent);
             }
         });

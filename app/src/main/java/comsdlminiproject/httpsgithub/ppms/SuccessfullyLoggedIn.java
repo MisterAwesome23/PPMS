@@ -82,7 +82,8 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
         btnViewRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Data.class));
+               // startActivity(new Intent(getApplicationContext(),Data.class));
+                startActivity(new Intent(getApplicationContext(),DataRetrieved.class));
             }
         });
 
