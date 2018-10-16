@@ -78,14 +78,14 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
         });
 
 
-        btnViewRecords = findViewById(R.id.btnViewRecords);
+        /*btnViewRecords = findViewById(R.id.btnViewRecords);
         btnViewRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                startActivity(new Intent(getApplicationContext(),Data.class));
 
             }
-        });
+        });*/
 
         btnOpenCctv= findViewById(R.id.btnOpenCctv);
         btnOpenCctv.setOnClickListener(new View.OnClickListener() {

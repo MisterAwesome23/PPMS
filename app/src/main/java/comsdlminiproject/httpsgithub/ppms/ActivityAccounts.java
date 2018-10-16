@@ -18,23 +18,25 @@ import java.util.Calendar;
 
 public class ActivityAccounts extends AppCompatActivity {
 
-    EditText etCash,etDtCard,etSwipeCard;
-    Button btnTallyValues,btnAddToRecords;
-
+    EditText etCash, etDtCard, etSwipeCard;
+    Button btnTallyValues, btnAddToRecords;
     DatabaseReference dbPetPump;
+    int flag=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accounts);
 
-        etCash= findViewById(R.id.etCash);
-        etDtCard= findViewById(R.id.etDtCard);
-        etSwipeCard= findViewById(R.id.etSwipeCard);
-        btnTallyValues= findViewById(R.id.btnTallyValues);
+        etCash = findViewById(R.id.etCash);
+        etDtCard = findViewById(R.id.etDtCard);
+        etSwipeCard = findViewById(R.id.etSwipeCard);
+        btnTallyValues = findViewById(R.id.btnTallyValues);
 
 
-        final double sumToTallyWith= Double.parseDouble(getIntent().getStringExtra("TotalSumForTally"));
+
+
+        final double sumToTallyWith = Double.parseDouble(getIntent().getStringExtra("TotalSumForTally"));
 
         java.util.Date c = Calendar.getInstance().getTime();
         //System.out.println("Current time => " + c);
@@ -50,57 +52,58 @@ public class ActivityAccounts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                double amtByCash= Double.parseDouble(etCash.getText().toString());
-                double amtByDtCard= Double.parseDouble(etDtCard.getText().toString());
-                double amtBySwipeCard= Double.parseDouble(etSwipeCard.getText().toString());
+                double amtByCash = Double.parseDouble(etCash.getText().toString());
+                double amtByDtCard = Double.parseDouble(etDtCard.getText().toString());
+                double amtBySwipeCard = Double.parseDouble(etSwipeCard.getText().toString());
 
-                if( (amtByCash)+(amtByDtCard)+(amtBySwipeCard)==sumToTallyWith)
-                {
+                if ((amtByCash) + (amtByDtCard) + (amtBySwipeCard) == sumToTallyWith) {
                     Toast.makeText(ActivityAccounts.this, "All values are tallied. Good to go.", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                    flag=0;
+                } else {
                     Toast.makeText(ActivityAccounts.this, "Value mismatch", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        btnAddToRecords= findViewById(R.id.btnAddToRecords);
-        btnAddToRecords.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            btnAddToRecords = findViewById(R.id.btnAddToRecords);
+            btnAddToRecords.setOnClickListener(new View.OnClickListener() {
 
-                String petprice,petsold,dieprice,diesold,date,petearn,dieearn,totearn;
+                    @Override
+                    public void onClick (View v) {
+                        if (flag == 1) {
+                            Toast.makeText(ActivityAccounts.this, "Tally Account First", Toast.LENGTH_SHORT).show();
+                        } else {
+                            String petprice, petsold, dieprice, diesold, date, petearn, dieearn, totearn;
 
-                String id = dbPetPump.push().getKey();
+                            String id = dbPetPump.push().getKey();
 
-                //String amtByCashText = Double.toString(amtByCash);
+                            //String amtByCashText = Double.toString(amtByCash);
 
-                petprice= getIntent().getStringExtra("PETROLPRICE");
-                petsold= getIntent().getStringExtra("PETROLSOLD");
-                dieprice= getIntent().getStringExtra("DIESELPRICE");
-                diesold= getIntent().getStringExtra("DIESELSOLD");
-                petearn = getIntent().getStringExtra("PETROLEARN");
-                dieearn = getIntent().getStringExtra("DIESELEARN");
-                totearn = getIntent().getStringExtra("TOTALEARN");
+                            petprice = getIntent().getStringExtra("PETROLPRICE");
+                            petsold = getIntent().getStringExtra("PETROLSOLD");
+                            dieprice = getIntent().getStringExtra("DIESELPRICE");
+                            diesold = getIntent().getStringExtra("DIESELSOLD");
+                            petearn = getIntent().getStringExtra("PETROLEARN");
+                            dieearn = getIntent().getStringExtra("DIESELEARN");
+                            totearn = getIntent().getStringExtra("TOTALEARN");
 
-                java.util.Date c = Calendar.getInstance().getTime();
-                //System.out.println("Current time => " + c);
+                            java.util.Date c = Calendar.getInstance().getTime();
+                            //System.out.println("Current time => " + c);
 
-                SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
-                String formattedDate = df.format(c);
-
-
-                PetPumpDB obj = new PetPumpDB(petsold,petprice,diesold,dieprice,petearn,dieearn,totearn,c.toString());
-
-                dbPetPump.child(c.toString()).setValue(obj);
-
-                Toast.makeText(ActivityAccounts.this, "Record Added.", Toast.LENGTH_SHORT).show();
+                            SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+                            String formattedDate = df.format(c);
 
 
-                //PetrolPumpDB db= new PetrolPumpDB(ActivityAccounts.this);
-                //db.open();
-                //String petprice,petsold,dieprice,diesold,date;
+                            PetPumpDB obj = new PetPumpDB(petsold, petprice, diesold, dieprice, petearn, dieearn, totearn, c.toString());
+
+                            dbPetPump.child(c.toString()).setValue(obj);
+
+                            Toast.makeText(ActivityAccounts.this, "Record Added.", Toast.LENGTH_SHORT).show();
+
+
+                            //PetrolPumpDB db= new PetrolPumpDB(ActivityAccounts.this);
+                            //db.open();
+                            //String petprice,petsold,dieprice,diesold,date;
 
                 /*
 
@@ -121,18 +124,14 @@ public class ActivityAccounts extends AppCompatActivity {
 
                 db.close();     */
 
-                Intent intent = new Intent(getApplicationContext(),SuccessfullyLoggedIn.class);
-                startActivity(intent);
-            }
-        });
+                            Intent intent = new Intent(getApplicationContext(), SuccessfullyLoggedIn.class);
+                            startActivity(intent);
+                        }
+                    }
+            });
 
-
-
-
-
-
+        }
     }
-}
 
 
         /*
