@@ -10,6 +10,7 @@ public class PetPumpDB
     }
 
     public PetPumpDB(String petrolSold, String petrolPrice, String dieselSold, String dieselPrice, String petrolEarn, String dieselEarn, String totalEarn, String date)
+
     {
         this.petrolSold = petrolSold;
         this.petrolPrice = petrolPrice;
