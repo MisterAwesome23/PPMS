@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SuccessfullyLoggedIn extends AppCompatActivity {
 
 
-    Button btnOpenMap,btnGetLatestPetrolPrice,btnTallyAccount,btnViewRecords,btnOpenCctv;
+    Button btnOpenMap,btnGetLatestPetrolPrice,btnTallyAccount,btnViewRecords,btnOpenCctv,btnOpenFirebase;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,8 +82,8 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
         btnViewRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // startActivity(new Intent(getApplicationContext(),Data.class));
-                startActivity(new Intent(getApplicationContext(),DataRetrieved.class));
+               startActivity(new Intent(getApplicationContext(),Data.class));
+
             }
         });
 
@@ -93,6 +93,14 @@ public class SuccessfullyLoggedIn extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = getPackageManager().getLaunchIntentForPackage("com.mcu.iVMSHD");
                 startActivity(intent);
+            }
+        });
+
+        btnOpenFirebase = findViewById(R.id.btnOpenFirebase);
+        btnOpenFirebase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),DataRetrieved.class));
             }
         });
 
