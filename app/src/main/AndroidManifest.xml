@@ -34,8 +34,8 @@
         <activity
             android:name=".showSales"
             android:label="PPMS" />
-
-        <activity android:name=".Data"></activity>
+        <activity android:name=".Data" />
+        <activity android:name=".DataRetrieved"></activity>
     </application>
 
 </manifest>

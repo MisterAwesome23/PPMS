@@ -35,9 +35,9 @@ public class InputData extends AppCompatActivity
     public void showSales(View view)
     {
         double oprdP, clrdP, oprdD, clrdD, msrpP, msrpD;
-        double salesRes, earnRes, salesRes2, earnRes2;
+        double salesRes, earnRes, salesRes2, earnRes2, earnTotal;
 
-        String salesResText,salesRes2Text,earnResText,earnRes2Text;
+        String salesResText,salesRes2Text,earnResText,earnRes2Text,earnTotalText;
         String msrpPText,msrpDText;
         String oprdText, clrdText, oprd2Text, clrd2Text, cost1Text, cost2Text;
 
@@ -79,12 +79,15 @@ public class InputData extends AppCompatActivity
             earnRes = salesRes * msrpP;
             earnRes2 = salesRes2 * msrpD;
 
+            earnTotal = earnRes + earnRes2;
+
             salesResText = Double.toString(salesRes);
             salesRes2Text = Double.toString(salesRes2);
             earnResText = Double.toString(earnRes);
             earnRes2Text = Double.toString(earnRes2);
             msrpDText = Double.toString(msrpD);
             msrpPText = Double.toString(msrpP);
+            earnTotalText = Double.toString(earnTotal);
 
 
             //if(Double.toString(oprdP).isEmpty() || Double.toString(oprdD).isEmpty() || Double.toString(clrdP).isEmpty() || Double.toString(clrdD).isEmpty() || Double.toString(msrpP).isEmpty() || Double.toString(msrpD).isEmpty())
@@ -101,6 +104,7 @@ public class InputData extends AppCompatActivity
             intent.putExtra("PETROLPRICE", msrpPText);
             intent.putExtra("DIESELSOLD", salesRes2Text);
             intent.putExtra("DIESELPRICE", msrpDText);
+            intent.putExtra("EARNTOTAL", earnTotalText);
             startActivity(intent);
 
         }
